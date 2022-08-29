@@ -1,17 +1,23 @@
 package data
 
-class User (nameParam: String) {
-    private var name = nameParam
+open class User (idParam: String, nameParam: String) {
 
-    fun getName(): String {
+    private var name: String = nameParam
+    open var id: String = idParam
+
+    open fun getName(): String {
         return this.name;
     }
 
-    fun setName(name: String): Unit{
+    fun setName(name: String) {
         this.name = name
     }
 
-    init{
-        println("Nama Saya ${this.name}")
+    fun setName() {
+        this.name = ""
     }
+
+//    init{
+//        println("Nama Saya ${this.name} (Ini adalah constructor User)")
+//    }
 }

@@ -1,9 +1,14 @@
 package data
 
-class Blog(headerPar: String,
-           bodyPar: String,
-            ) {
-    var header: String = headerPar
-    var body: String = bodyPar
+class Blog(var header: String,var body: String,) {
+
+    constructor(header: String): this (header , "Body Tidak Diisi."){
+        println("second constructor single param")
+        this.header = header
+    }
+
+    constructor(): this ("Header Belum Diisi" , "Body Tidak Diisi."){
+        println("secondary constructor no params")
+    }
 
 }
